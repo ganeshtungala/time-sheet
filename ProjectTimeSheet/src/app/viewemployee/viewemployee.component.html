@@ -1,0 +1,63 @@
+
+<img id="logo"
+src="https://www.valuemomentum.com/wp-content/themes/valuemomentum/assets/dist/img/refresh/logos/ValueMomentum-logo.png"
+alt="MDB Logo" draggable="false" height="60" />
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+<div class="container"> <a href="#" class="navbar-brand"> TimeSheet
+    </a> <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a routerLink="/dashboard" class="nav-link">Home </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</nav>
+
+<table class="table table-bordered" >
+
+    <thead>
+  
+        <tr>
+  
+            <th>id</th>
+  
+            <th>firstName</th>
+            <th>lastName</th>
+  
+            <th>skillSet</th>
+            
+            <th>totalExperience</th>
+            <th>vamExperience</th>
+        
+  
+        </tr>
+  
+    </thead>
+  
+    <tbody>
+  
+        <tr *ngFor="let u of Details;let i=index">
+  
+            <td>{{u.id}}</td>
+  
+            <td>{{u.firstName}}</td>
+  
+            <td>{{u.lastName}}</td>
+  
+            <td>{{u.skillSet}}</td>
+            <td>{{u.totalExperience}}</td>
+            <td>{{u.vamExperience}}</td>
+            <td>
+                <!-- <a routerLink="/edit-training/{{u.id}}" >Edit</a> -->
+                <!-- <span (click)="deleteTraining(u.id)" >Delete</span> -->
+            </td>
+  
+        </tr>
+  
+    </tbody>
+  
+  </table>
