@@ -26,14 +26,14 @@ public class TicketsController {
     private TicketsService service;
      
     // RESTful API methods for Retrieval operations
-    @GetMapping("/Tickets")
+    @GetMapping("/tickets")
     public List<Tickets> list() {
         return service.listAll();
     }
-    @GetMapping("/Tickets/{id}")
-    public ResponseEntity<Tickets> get(@PathVariable Integer id) {
+    @GetMapping("/tickets/{ticketsId}")
+    public ResponseEntity<Tickets> get(@PathVariable Integer ticketsId) {
         try {
-        	Tickets tickets = service.get(id);
+        	Tickets tickets = service.get(ticketsId);
             return new ResponseEntity<Tickets>(tickets, HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<Tickets>(HttpStatus.NOT_FOUND);
@@ -41,17 +41,19 @@ public class TicketsController {
     }
      
     // RESTful API method for Create operation
-    @PostMapping("/Tickets")
+    @PostMapping("/tickets")
     public ResponseEntity<Tickets> add(@RequestBody Tickets tickets) {
         service.save(tickets);
+        Tickets tickets1 = service.get(tickets.getTicketsId());
+      System.out.println(tickets1.getProjects());
         return ResponseEntity.ok(tickets);
     }
      
     // RESTful API method for Update operation
-    @PutMapping("/Tickets/{id}")
-    public ResponseEntity<?> update(@RequestBody Tickets tickets1, @PathVariable Integer id) {
+    @PutMapping("/tickets/{ticketsId}")
+    public ResponseEntity<?> update(@RequestBody Tickets tickets1, @PathVariable Integer ticketsId) {
         try {
-        	Tickets tickets = service.get(id);
+        	Tickets tickets = service.get(ticketsId);
             
             service.save(tickets1);
 //            return new ResponseEntity<>(HttpStatus.OK);
@@ -63,9 +65,9 @@ public class TicketsController {
         
      
     // RESTful API method for Delete operation@DeleteMapping("/products/{id}")
-    @DeleteMapping("/Tickets/{id}")
-    public void delete(@PathVariable Integer id) {
-        service.delete(id);
+    @DeleteMapping("/tickets/{ticketsId}")
+    public void delete(@PathVariable Integer ticketsId) {
+        service.delete(ticketsId);
         System.out.println("deleted");
     
 }

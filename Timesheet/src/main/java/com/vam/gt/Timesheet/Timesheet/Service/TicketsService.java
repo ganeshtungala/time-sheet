@@ -26,11 +26,11 @@ public class TicketsService {
         repo.save(tickets);
     }
      
-    public Tickets get(Integer id) {
-        return repo.findById(id).get();
+    public Tickets get(Integer ticketsId) {
+        return repo.findById(ticketsId).get();
     }
      
-    public void delete(Integer id) {
-        repo.deleteById(id);
+    public void delete(Integer ticketsId) {
+        repo.deleteById(ticketsId);
     }
 }

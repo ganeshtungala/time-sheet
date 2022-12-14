@@ -30,10 +30,10 @@ public class TimesheetController {
     public List<Timesheet> list() {
         return service.listAll();
     }
-    @GetMapping("/timesheets/{id}")
-    public ResponseEntity<Timesheet> get(@PathVariable Integer id) {
+    @GetMapping("/timesheets/{timesheetId}")
+    public ResponseEntity<Timesheet> get(@PathVariable Integer timesheetId) {
         try {
-            Timesheet timesheet = service.get(id);
+            Timesheet timesheet = service.get(timesheetId);
             return new ResponseEntity<Timesheet>(timesheet, HttpStatus.OK);
 //            return ResponseEntity.ok(timesheet);
         } catch (NoSuchElementException e) {
@@ -49,10 +49,10 @@ public class TimesheetController {
     }
      
     // RESTful API method for Update operation
-    @PutMapping("/timesheets/{id}")
-    public ResponseEntity<?> update(@RequestBody Timesheet timesheet1, @PathVariable Integer id) {
+    @PutMapping("/timesheets/{timesheetId}")
+    public ResponseEntity<?> update(@RequestBody Timesheet timesheet1, @PathVariable Integer timesheetId) {
         try {
-            Timesheet timesheet = service.get(id);
+            Timesheet timesheet = service.get(timesheetId);
             
             service.save(timesheet1);
 //            return new ResponseEntity<>(HttpStatus.OK);
@@ -65,9 +65,9 @@ public class TimesheetController {
         
      
     // RESTful API method for Delete operation@DeleteMapping("/products/{id}")
-    @DeleteMapping("/timesheets/{id}")
-    public void delete(@PathVariable Integer id) {
-        service.delete(id);
+    @DeleteMapping("/timesheets/{timesheetId}")
+    public void delete(@PathVariable Integer timesheetId) {
+        service.delete(timesheetId);
     }
     
 }

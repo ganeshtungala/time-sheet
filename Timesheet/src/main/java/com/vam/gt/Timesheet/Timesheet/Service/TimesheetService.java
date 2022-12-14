@@ -24,11 +24,11 @@ public class TimesheetService {
         repo.save(timesheet);
     }
      
-    public Timesheet get(Integer id) {
-        return repo.findById(id).get();
+    public Timesheet get(Integer timesheetId) {
+        return repo.findById(timesheetId).get();
     }
      
-    public void delete(Integer id) {
-        repo.deleteById(id);
+    public void delete(Integer timesheetId) {
+        repo.deleteById(timesheetId);
     }
 }
