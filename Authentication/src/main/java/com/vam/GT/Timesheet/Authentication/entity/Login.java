@@ -15,72 +15,71 @@ public class Login {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
 	private long id;
-	 
-	@Column(name="email")
+	@Column(name="emailId")
 	private String emailId;
-	
+
 	@Column(name="password")
 	private String password;
-	
+
 	@Column(name = "firstName")
-	private String FirstName;
-	
+	private String firstName;
+
 	@Column(name = "lastName")
-	private String LastName;
-	
-	@Column(name = "totalExperience")
-	private float TotalExperience ;
-	
-	@Column(name = "vamExperience")
+	private String lastName;
+
+	@Column(name = "totalExperience",precision=4,scale=2)
+	private float totalExperience ;
+
+	@Column(name = "vamExperience",precision=4,scale=2)
 	private float vamExperience;
-	
+
 	@Column(name = "skillSet")
 	private String skillSet;
-	
-	
+
+
 	public long getId() {
 		return id;
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	public String getEmailId() {
 		return emailId;
 	}
-	
+
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		firstName = firstName;
 	}
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		lastName = lastName;
 	}
-	
-	
+
+
 	public float getTotalExperience() {
-		return TotalExperience;
+		return totalExperience;
 	}
 	public void setTotalExperience(float totalExperience) {
-		TotalExperience = totalExperience;
+		totalExperience = totalExperience;
 	}
 	public float getVamExperience() {
 		return vamExperience;
@@ -94,30 +93,28 @@ public class Login {
 	public void setSkillSet(String skillSet) {
 		skillSet = skillSet;
 	}
-	
-	
-	
+
+
+
 	public Login(long id, String emailId, String password,String firstName, String lastName, float totalExperience, float vamExperience, String skillSet) {
 		super();
 		this.id = id;
 		this.emailId = emailId;
 		this.password = password;
-		this.FirstName = firstName;
-		this.LastName = lastName;
-		this.TotalExperience = totalExperience;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.totalExperience = totalExperience;
 		this.vamExperience = vamExperience;
 		this.skillSet = skillSet;
-		
+
 	}
-	
+
+
 	public Login() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Login orElseThrow(Object object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+
+
+
 }

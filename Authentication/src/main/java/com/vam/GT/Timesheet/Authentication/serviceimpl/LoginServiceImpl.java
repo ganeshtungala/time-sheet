@@ -14,48 +14,48 @@ import com.vam.GT.Timesheet.Authentication.service.LoginService;
 
 @Service
 public class LoginServiceImpl implements LoginService{
-	
+
 	@Autowired
 	private LoginRepository EmployeeRepository;
-		
+
 	@Override
 	public Login saveemployee(Login employee) {
 		return EmployeeRepository.save(employee);
 	}
-	
+
 	@Override
 	public List<Login> getemployees(){
 		return EmployeeRepository.findAll();
 	}
-	
+
 	@Override
 	public Login getemployeeById(String emailId) {
 		Optional<Login> employee = EmployeeRepository.findByemailId(emailId);
 		return employee.get();
 	}
-	
+
 	@Override
 	public Login getemployeeByName(String name) {
 		return EmployeeRepository.findBypassword(name);
 	}
- @Override
+	@Override
 	public Login findByemailId(Long id) {
 		// TODO Auto-generated method stub
 		Optional<Login> employee = EmployeeRepository.findById(id);
-	     return employee.get();
-	     
+		return employee.get();
+
 	}
- @Override
+	@Override
 	public Login findById(Long id) {
 		// TODO Auto-generated method stub
 		Optional<Login> employee = EmployeeRepository.findById(id);
-	     return employee.get();
-	     
+		return employee.get();
+
 	}
 
-@Override
-public void delete(Login userDetails) {
-	// TODO Auto-generated method stub
-	
-}
+	@Override
+	public void delete(Login userDetails) {
+		// TODO Auto-generated method stub
+
+	}
 }
