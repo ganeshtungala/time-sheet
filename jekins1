@@ -12,7 +12,7 @@ def TAG_NAME = params.TAG_NAME
 // def Dockerhub_URL = params.Dockerhub_URL
 
 stage('Checkout') {
-  git branch: 'master', credentialsId:'github', url: 'https://github.com/dpanigrahy2020/ADOK8.git'  
+  git branch: 'master', credentialsId:'github', 'url: https://github.com/sbeetukuri-vam/time-tracker' 
  }
 
 stage('Build') {
